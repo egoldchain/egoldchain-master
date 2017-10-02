@@ -38,7 +38,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
         if (true) {//change to false when release
              arith_uint256 arith_hashTarget = arith_uint256().SetCompact(genesis.nBits);
              uint256 hashTarget = ArithToUint256(arith_hashTarget);
-	     while (genesis.GetHash() > hashTarget)
+	     while (hashTarget < genesis.GetHash())
                 {
                     ++genesis.nNonce;
                     if (genesis.nNonce == 0)
