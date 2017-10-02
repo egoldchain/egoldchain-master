@@ -36,7 +36,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
 
         if (true) {//change to false when release
-             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
+             uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
              while (genesis.GetHash() > hashTarget)
                 {
                     ++genesis.nNonce;
@@ -48,10 +48,9 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
                 }
 
         	//// debug print
-            uint256 hash = block.GetHash();
+            uint256 hash = genesis.GetHash();
             printf("new hash:%s\n", hash.ToString().c_str());
-            printf("old hashGenesisBlock:%s\n", hashGenesisBlock.ToString().c_str());
-            printf("hashMerkleRoot:%s\n", block.hashMerkleRoot.ToString().c_str());
+            printf("hashMerkleRoot:%s\n", genesis.hashMerkleRoot.ToString().c_str());
             printf("nNonce:%u\n", genesis.nNonce);
             printf("nTime:%u\n", genesis.nTime);
          }
