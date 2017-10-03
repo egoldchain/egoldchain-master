@@ -72,7 +72,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-	const char* pszTimestamp = "Egoldchain tech (shenzhen) Co., Ltd. Issued shares in 1 billion digital assets on 8/Oct/2017";
+	const char* pszTimestamp = "Egoldchain tech (shenzhen) Co., Ltd. issued shares in 1 billion digital assets on blockchain 8/Oct/2017";
 	//const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
 	//address: EeeRmoobdvJNMS8d15pCbF3v8aUZhqTjWt and the pubkey below
 	const CScript genesisOutputScript = CScript() << ParseHex("04d94c3496d15487d32dfa9a140a7e641e1aeac436179e1ba6fcdd5aaf9e9194e7e5abca8cff64bd8a9b0ef5e0712e23b3d4ae43b1e43c40337be587b5f5f5bc84") << OP_CHECKSIG;
