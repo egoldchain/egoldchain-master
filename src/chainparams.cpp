@@ -35,8 +35,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
 
-        if (true) {//change to false when release
-             /*arith_uint256 arith_hashTarget = arith_uint256().SetCompact(genesis.nBits);
+    /*    if (true) {//change to false when release
+             arith_uint256 arith_hashTarget = arith_uint256().SetCompact(genesis.nBits);
              uint256 hashTarget = ArithToUint256(arith_hashTarget);
 	     while (hashTarget < genesis.GetHash())
                 {
@@ -47,7 +47,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
                         ++genesis.nTime;
                     }
                 }
-              */
+              
         	//// debug print
             uint256 hash = genesis.GetHash();
             printf("new hash:%s\n", hash.ToString().c_str());
@@ -55,7 +55,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
             printf("nNonce:%u\n", genesis.nNonce);
             printf("nTime:%u\n", genesis.nTime);
          }
-
+     */
     return genesis;
 }
 
@@ -166,8 +166,8 @@ public:
 
 	genesis = CreateGenesisBlock(1506737410, 168888888, 0x1d00ffff, 1, 50000000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S("0xd26bb9ff425a8755af497d766d0a43cdfc7a7a5b7cd41cdd0ab732344a4f3a1b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x737b9e9920638e2f577fa0e5aa997f5095634caa36e90375e74ae61f55698393"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
 	vSeeds.emplace_back("50.116.43.172", false);
