@@ -164,7 +164,7 @@ public:
         nDefaultPort = 8833;
         nPruneAfterHeight = 1000;
 
-	genesis = CreateGenesisBlock(1506737410, 168888888, 0x1d00ffff, 1, 50000000 * COIN);
+	genesis = CreateGenesisBlock(1506737410, 168888888, 0x1d00ffff, 7, 50000000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0xd26bb9ff425a8755af497d766d0a43cdfc7a7a5b7cd41cdd0ab732344a4f3a1b"));
         assert(genesis.hashMerkleRoot == uint256S("0x737b9e9920638e2f577fa0e5aa997f5095634caa36e90375e74ae61f55698393"));
@@ -250,7 +250,7 @@ public:
         nDefaultPort = 18835;
         nPruneAfterHeight = 1000;
 
-		genesis = CreateGenesisBlock(1506737410, 293345, 0x1e0ffff0, 1, 50000000 * COIN);
+		genesis = CreateGenesisBlock(1506737410, 293345, 0x1e0ffff0, 7, 50000000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
         assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
@@ -333,7 +333,7 @@ public:
         nDefaultPort = 18844;
         nPruneAfterHeight = 1000;
 
-		genesis = CreateGenesisBlock(1506737410, 0, 0x207fffff, 1, 500000000 * COIN);
+		genesis = CreateGenesisBlock(1506737410, 0, 0x207fffff, 7, 500000000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
         assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
