@@ -72,10 +72,10 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-	const char* pszTimestamp = "Egoldchain tech (shenzhen) Co., Ltd. issued shares in 1 billion digital assets on blockchain 8/Oct/2017";
+	const char* pszTimestamp = "Egoldchain issued shares in 1 billion digital assets on 8/Oct/2017";
 	//const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
 	//address: EeeRmoobdvJNMS8d15pCbF3v8aUZhqTjWt and the pubkey below
-	const CScript genesisOutputScript = CScript() << ParseHex("04d94c3496d15487d32dfa9a140a7e641e1aeac436179e1ba6fcdd5aaf9e9194e7e5abca8cff64bd8a9b0ef5e0712e23b3d4ae43b1e43c40337be587b5f5f5bc84") << OP_CHECKSIG;
+	const CScript genesisOutputScript = CScript() << ParseHex("02f3e45fd22b49575f0d7326d8f6c4ed2a985c0c476550789399752be54efb8785") << OP_CHECKSIG;
 	return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -102,7 +102,7 @@ public:
         strNetworkID = "main";
 	consensus.nSubsidyHalvingInterval = 840000; //not use
         consensus.BIP34Height = 0;
-	consensus.BIP34Hash = uint256S("000000004be4b6f7d16fe602061bcc726d995d3b6c3717ee6129388707afae2f");
+	consensus.BIP34Hash = uint256S("00000000d97faabbbdf3af0cc346f5ae6a542d5a566f9208f5c01b60da69b0b4");
         consensus.BIP65Height = 0; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 0; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
@@ -164,10 +164,10 @@ public:
         nDefaultPort = 8833;
         nPruneAfterHeight = 1000;
 
-	genesis = CreateGenesisBlock(1506737410, 1102636301, 0x1d00ffff, 7, 50000000 * COIN);
+	genesis = CreateGenesisBlock(1506737412, 3244209470, 0x1d00ffff, 7, 50000000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000000004be4b6f7d16fe602061bcc726d995d3b6c3717ee6129388707afae2f"));
-        assert(genesis.hashMerkleRoot == uint256S("0x737b9e9920638e2f577fa0e5aa997f5095634caa36e90375e74ae61f55698393"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000d97faabbbdf3af0cc346f5ae6a542d5a566f9208f5c01b60da69b0b4"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2f6e5637655500b44921fd059686d95334ae2d720f4d1f08ac2ea376b7f7783e"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
 	vSeeds.emplace_back("50.116.43.172", false);
